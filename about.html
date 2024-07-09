@@ -1,0 +1,138 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>About Us - Hospital Management System</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+</head>
+<body class="bg-gray-100 font-sans leading-normal tracking-normal">
+    <header class="bg-gray-800 text-white shadow-md">
+        <div class="container mx-auto flex justify-between items-center py-4 px-6">
+            <div class="text-2xl font-bold">Hospital Management System</div>
+            <button id="menu-toggle" class="lg:hidden block text-gray-500 hover:text-white focus:text-white focus:outline-none">
+                <svg class="h-6 w-6 fill-current" viewBox="0 0 24 24">
+                    <path v-if="!isOpen" fill-rule="evenodd" clip-rule="evenodd" d="M20 12c0 .553-.048 1.1-.14 1.638a1 1 0 0 1-1.79.724l-.07-.123C17.11 13.503 16.61 13 16 13s-1.11.503-1.99 1.24l-.07.123a1 1 0 0 1-1.79-.724C9.048 13.1 9 12.553 9 12s.048-1.1.14-1.638a1 1 0 0 1 1.79-.724l.07.123C10.89 10.497 11.39 11 12 11s1.11-.503 1.99-1.24l.07-.123a1 1 0 0 1 1.79.724c.092.538.14 1.085.14 1.638zM7.707 9.293a1 1 0 0 1 1.414-1.414L12 10.586l2.879-2.879a1 1 0 0 1 1.414 1.414L13.414 12l2.879 2.879a1 1 0 1 1-1.414 1.414L12 13.414l-2.879 2.879a1 1 0 0 1-1.414-1.414L10.586 12 7.707 9.121a1 1 0 0 1 0-1.414zM4 7a1 1 0 0 1 0-2h16a1 1 0 0 1 0 2H4z"/>
+                </svg>
+            </button>
+            <nav class="hidden lg:flex">
+                <ul class="flex space-x-6">
+                    <li><a href="index.html" class="hover:text-red-300">Home</a></li>
+                    <li><a href="about.html" class="active underline hover:text-red-300">About</a></li>
+                    <li><a href="contact.html" class="hover:text-red-300">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+        <div id="mobile-menu" class="hidden lg:hidden">
+            <ul class="flex flex-col space-y-4 items-center mt-4">
+                <li><a href="index.html" class="block text-white hover:text-red-300">Home</a></li>
+                <li><a href="about.html" class="block text-white active underline hover:text-red-300">About</a></li>
+                <li><a href="contact.html" class="block text-white hover:text-red-300">Contact</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <section class="container mx-auto py-16 px-4">
+        <h1 class="text-4xl font-bold text-center mb-8">About Us</h1>
+        <div class="bg-white p-8 rounded-lg shadow-md flex flex-col md:flex-row">
+            <div class="md:w-1/2 mb-8 md:mb-0 md:pr-8 flex justify-center items-center">
+                <img src="images/hospital.jpg" alt="Hospital Image" class="rounded-lg shadow-md w-3/4 h-auto object-cover">
+            </div>
+            <div class="md:w-1/2">
+                <p class="mb-4">Welcome to Galaxy Hospital – your comprehensive solution for efficient and seamless healthcare administration.</p>
+                <p><strong>Our Mission</strong></p>
+                <p class="mb-4">At Galaxy, our mission is to empower healthcare providers with cutting-edge technology that enhances patient care, optimizes operational efficiency, and streamlines administrative processes. We believe that healthcare professionals should focus on what they do best – caring for patients – while we handle the intricacies of hospital management.</p>
+                <p><strong>What We Offer</strong></p>
+                <p>Our hospital management system is designed to cater to the diverse needs of hospitals, clinics, and healthcare facilities. Key features include:</p>
+                <p><strong>Patient Management:</strong>Seamlessly manage patient information, appointments, medical history, and billing in one centralized platform.
+                    <br><strong>Health Records (EHR):</strong>Securely store and access patient records, ensuring quick and accurate information retrieval for improved patient care.
+                    <br><strong>Appointment Scheduling: </strong>Simplify appointment scheduling with an intuitive interface that reduces wait times and maximizes resource utilization.</p>
+                <p><br><strong>Vision</strong></p>
+                <p>We envision a future where healthcare administration is effortless, allowing healthcare providers to deliver exceptional patient care without the burden of complex management tasks. Through innovation and dedication, we strive to be at the forefront of healthcare technology, continuously improving and expanding our services to meet the evolving needs of the industry.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="container mx-auto py-16 px-4">
+        <h2 class="text-3xl font-bold text-center mb-8">Our Team</h2>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div class="bg-white p-8 rounded-lg shadow-md">
+                <img src="images/doctor1.jpg" alt="Doctor 1" class="rounded-full w-32 h-32 mx-auto mb-4">
+                <h3 class="text-xl font-bold text-center">Dr. John Doe</h3>
+                <p class="text-center text-gray-600">Cardiologist</p>
+            </div>
+            <div class="bg-white p-8 rounded-lg shadow-md">
+                <img src="images/doctor2.jpg" alt="Doctor 2" class="rounded-full w-32 h-32 mx-auto mb-4">
+                <h3 class="text-xl font-bold text-center">Dr. Jane Smith</h3>
+                <p class="text-center text-gray-600">Neurologist</p>
+            </div>
+            <div class="bg-white p-8 rounded-lg shadow-md">
+                <img src="images/doctor3.jpg" alt="Doctor 3" class="rounded-full w-32 h-32 mx-auto mb-4">
+                <h3 class="text-xl font-bold text-center">Dr. Sarah Johnson</h3>
+                <p class="text-center text-gray-600">Pediatrician</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="bg-gray-900 text-white py-10">
+        <div class="container mx-auto">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-10">
+                <div class="footer-col-1">
+                    <h3 class="text-lg font-semibold mb-2">Download Our App</h3>
+                    <p class="mb-4">Available on Android, iOS and Roku</p>
+                    <div class="flex space-x-4">
+                        <img src="images/playstore.png" alt="Play Store" class="h-12 w-13">
+                        <img src="images/appstore.png" alt="App Store" class="h-12 w-13">
+                    </div>
+                </div>
+                <div class="footer-col-2">
+                    <img src="images/logo.png" alt="Logo" class="h-16 mb-4">
+                    <p>Our Goal is to provide quality products and services to all out there!</p>
+                </div>
+                <div class="footer-col-3">
+                    <h3 class="text-lg font-semibold mb-2">Useful Links</h3>
+                    <ul class="space-y-2">
+                        <li>Coupons</li>
+                        <li>Blog Post</li>
+                        <li>Return Policy</li>
+                        <li>Join Affiliate</li>
+                    </ul>
+                </div>
+                <div class="footer-col-4">
+                    <h3 class="text-lg font-semibold mb-2">Follow Us</h3>
+                    <ul class="space-y-2">
+                        <li class="flex items-center">
+                            <img src="images/facebook.png" alt="Facebook Icon" class="h-4 w-4 mr-1">
+                            <a href="https://www.facebook.com/" target="_blank" rel="noopener noreferrer" class="ml-1">Facebook</a>
+                        </li>
+                        <li class="flex items-center">
+                            <img src="images/twitter.png" alt="Twitter Icon" class="h-4 w-4 mr-1">
+                            <a href="https://twitter.com/" target="_blank" rel="noopener noreferrer" class="ml-1">Twitter</a>
+                        </li>
+                        <li class="flex items-center">
+                            <img src="images/instagram.png" alt="Instagram Icon" class="h-4 w-4 mr-1">
+                            <a href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer" class="ml-1">Instagram</a>
+                        </li>
+                        <li class="flex items-center">
+                            <img src="images/youtube.png" alt="YouTube Icon" class="h-4 w-4 mr-1">
+                            <a href="https://www.youtube.com/" target="_blank" rel="noopener noreferrer" class="ml-1">YouTube</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <hr class="my-8 border-gray-700">
+            <p class="text-center">&copy; 2024 - The Galaxy Hospital</p>
+        </div>
+    </section>
+
+    <script>
+        const menuToggle = document.getElementById('menu-toggle');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        menuToggle.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+    </script>
+</body>
+</html>
