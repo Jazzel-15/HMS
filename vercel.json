@@ -3,6 +3,8 @@
     { "src": "^/about$", "dest": "/about.html" },
     { "src": "^/contact$", "dest": "/contact.html" },
     { "src": "^/profile$", "dest": "/profile.html" },
+    { "src": "^/about.html$", "dest": "/contact.html" },
+    { "src": "^/contact.html$", "dest": "/about.html" },
     { "src": "^/assets/(.*)$", "dest": "/assets/$1" },
     { "src": "^/(.*)$", "dest": "/index.html" }
   ]
