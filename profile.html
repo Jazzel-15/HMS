@@ -21,14 +21,10 @@
             <nav class="hidden lg:flex lg:items-center lg:w-auto">
                 <ul class="flex space-x-6">
                     <li><a class="hover:text-red-300" href="/index.html">Home</a></li>
-                    <li><a href="#" class="hover:text-red-300" onclick="showSection('patientManagement')">Patient
-                            Management</a></li>
-                    <li><a href="#" class="hover:text-red-300" onclick="showSection('doctorManagement')">Doctor
-                            Management</a></li>
-                    <li><a href="#" class="hover:text-red-300" onclick="showSection('medicalRecords')">Medical
-                            Records</a></li>
-                    <li><a href="#" class="hover:text-red-300" onclick="showSection('appointments')">Appointments</a>
-                    </li>
+                    <li><a class="hover:text-red-300" href="#patientManagement">Patient Management</a></li>
+                    <li><a href="#" class="hover:text-red-300" onclick="showSection('doctorManagement')">Doctor Management</a></li>
+                    <li><a href="#" class="hover:text-red-300" onclick="showSection('medicalRecords')">Medical Records</a></li>
+                    <li><a href="#" class="hover:text-red-300" onclick="showSection('appointments')">Appointments</a></li>
                 </ul>
             </nav>
             <!-- Mobile Navigation Menu -->
@@ -48,13 +44,10 @@
         <!-- Mobile Menu (hidden by default) -->
         <div id="mobile-menu"
             class="lg:hidden hidden bg-gray-900 text-white py-2 px-6 space-y-2 absolute top-16 left-0 right-0 z-10">
-            <li><a class="hover:text-red-300" href="/index.html">Home</a></li>
-            <a href="#" class="block py-2 hover:text-red-300" onclick="showSection('patientManagement')">Patient
-                Management</a>
-            <a href="#" class="block py-2 hover:text-red-300" onclick="showSection('doctorManagement')">Doctor
-                Management</a>
-            <a href="#" class="block py-2 hover:text-red-300" onclick="showSection('medicalRecords')">Medical
-                Records</a>
+            <a class="hover:text-red-300" href="/index.html">Home</a>
+            <a href="#patientManagement" class="block py-2 hover:text-red-300">Patient Management</a>
+            <a href="#" class="block py-2 hover:text-red-300" onclick="showSection('doctorManagement')">Doctor Management</a>
+            <a href="#" class="block py-2 hover:text-red-300" onclick="showSection('medicalRecords')">Medical Records</a>
             <a href="#" class="block py-2 hover:text-red-300" onclick="showSection('appointments')">Appointments</a>
         </div>
     </header>
@@ -63,7 +56,7 @@
     <main class="container mx-auto py-16">
 
         <!-- Patient Management Section -->
-        <section id="patientManagement" class="hidden">
+        <section id="patientManagement">
             <h2 class="text-4xl font-bold mb-4">Patient Management</h2>
             <div class="bg-white p-6 rounded-lg shadow-lg">
                 <form id="patientForm">
@@ -178,6 +171,12 @@
                         <input type="date" id="appointmentDate"
                             class="mt-1 block w-full rounded-md border-gray-300 shadow-sm">
                     </div>
+                    <div class="mb-4">
+                        <label for="appointmentTime"
+                            class="block text-sm font-medium text-gray-700">Time</label>
+                        <input type="time" id="appointmentTime"
+                            class="mt-1 block w-full rounded-md border-gray-300 shadow-sm">
+                    </div>
                     <button type="button"
                         class="bg-blue-600 text-white py-2 px-4 rounded-lg hover:bg-blue-700"
                         onclick="addAppointment()">Add Appointment</button>
@@ -187,75 +186,28 @@
         </section>
     </main>
 
-    <!-- JavaScript for Section Toggle -->
     <script>
-        function showSection(sectionId) {
-            const sections = document.querySelectorAll('main section');
-            sections.forEach(section => {
-                section.classList.add('hidden');
+        document.addEventListener('DOMContentLoaded', function () {
+            const menuToggle = document.getElementById('menu-toggle');
+            const mobileMenu = document.getElementById('mobile-menu');
+
+            menuToggle.addEventListener('click', () => {
+                mobileMenu.classList.toggle('hidden');
             });
-            document.getElementById(sectionId).classList.remove('hidden');
-        }
-
-        function addPatient() {
-            const name = document.getElementById('patientName').value;
-            const age = document.getElementById('patientAge').value;
-            const gender = document.getElementById('patientGender').value;
-            const history = document.getElementById('patientHistory').value;
-            const patientsList = document.getElementById('patientsList');
-            const patientDiv = document.createElement('div');
-            patientDiv.innerHTML = `<strong>${name}</strong> (Age: ${age}, Gender: ${gender})<br>Medical History: ${history}<hr>`;
-            patientsList.appendChild(patientDiv);
-        }
-
-        function addDoctor() {
-            const name = document.getElementById('doctorName').value;
-            const specialization = document.getElementById('doctorSpecialization').value;
-            const availability = document.getElementById('doctorAvailability').value;
-            const doctorsList = document.getElementById('doctorsList');
-            const doctorDiv = document.createElement('div');
-            doctorDiv.innerHTML = `<strong>${name}</strong> (Specialization: ${specialization}, Availability: ${availability})<hr>`;
-            doctorsList.appendChild(doctorDiv);
-        }
-
-        function addRecord() {
-            const patientName = document.getElementById('recordPatientName').value;
-            const details = document.getElementById('recordDetails').value;
-            const recordsList = document.getElementById('recordsList');
-            const recordDiv = document.createElement('div');
-            recordDiv.innerHTML = `<strong>${patientName}</strong><br>Details: ${details}<hr>`;
-            recordsList.appendChild(recordDiv);
-        }
-
-        function addAppointment() {
-            const patientName = document.getElementById('appointmentPatientName').value;
-            const doctorName = document.getElementById('appointmentDoctorName').value;
-            const date = document.getElementById('appointmentDate').value;
-            const appointmentsList = document.getElementById('appointmentsList');
-            const appointmentDiv = document.createElement('div');
-            appointmentDiv.innerHTML = `<strong>Patient:</strong> ${patientName} <br><strong>Doctor:</strong> ${doctorName} <br><strong>Date:</strong> ${date}<hr>`;
-            appointmentsList.appendChild(appointmentDiv);
-        }
-
-        // Mobile Menu Toggle
-        document.querySelector('#menu-toggle').addEventListener('click', function () {
-            document.querySelector('#mobile-menu').classList.toggle('hidden');
         });
 
-        // Close the mobile menu when clicking outside of it
-        window.addEventListener('click', function (event) {
-            if (!event.target.matches('#menu-toggle')) {
-                var dropdowns = document.getElementsByClassName("hidden");
-                for (var i = 0; i < dropdowns.length; i++) {
-                    var openDropdown = dropdowns[i];
-                    if (!openDropdown.classList.contains('hidden')) {
-                        openDropdown.classList.add('hidden');
-                    }
-                }
+        function showSection(sectionId) {
+            // Hide all sections
+            const sections = document.querySelectorAll('main > section');
+            sections.forEach(section => section.classList.add('hidden'));
+
+            // Show the selected section
+            const section = document.getElementById(sectionId);
+            if (section) {
+                section.classList.remove('hidden');
             }
-        });
+        }
     </script>
-
 </body>
 
 </html>
