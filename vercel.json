@@ -1,7 +1,7 @@
 {
   "routes": [
-    { "src": "^/about$", "dest": "/about.html" },
-    { "src": "^/contact$", "dest": "/contact.html" },
+    { "src": "^/about$", "dest": "/contact.html" },
+    { "src": "^/contact$", "dest": "/about.html" },
     { "src": "^/profile$", "dest": "/profile.html" },
     { "src": "^/about$", "dest": "/contact.html" },
     { "src": "^/contact$", "dest": "/about.html" },
